@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #87ceeb;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.sky {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background: linear-gradient(#87ceeb, #fff);
+  overflow: hidden;
+  border-bottom: 3px solid #333;
+}
+
+.plane {
+  position: absolute;
+  width: 400px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: top 0.5s ease, left 0.5s ease, transform 0.5s ease;
+}
+
+
+
+.controls {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background-color: #444;
+  color: white;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #222;
+}
+
+/* Clouds */
+.cloud {
+  position: absolute;
+  width: 200px;
+  top: 20%;
+  opacity: 0.8;
+  animation: moveClouds 20s linear infinite;
+}
+
+#cloud2 {
+  top: 35%;
+  width: 200px;
+  animation-delay: 10s;
+}
+
+@keyframes moveClouds {
+  0% {
+    right: -150px;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+.sky.paused .cloud {
+  animation-play-state: paused;
+}
+
+/* Road */
+.road {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #333;
+  border-top: 5px solid #999;
+}
+
+.hidden {
+  display: none;
+}
